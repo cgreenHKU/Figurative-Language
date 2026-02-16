@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Picturebook Figurative Language Database</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(to bottom, #f9fafb, #f3f4f6);
+      color: #111827;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1800px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h1 {
+      margin: 0 0 12px 0;
+      font-size: 2.8rem;
+      color: #1d4ed8;
+      font-weight: 700;
+    }
+    .tagline {
+      font-size: 1.25rem;
+      color: #4b5563;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 36px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      background: #1d4ed8;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
+      transition: all 0.2s ease;
+      margin: 28px auto;
+      border: none;
+      cursor: pointer;
+    }
+    .download-btn:hover {
+      background: #1e40af;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(29, 78, 216, 0.35);
+    }
+    .info-card {
+      background: white;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 32px 0 40px 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      border-left: 5px solid #3b82f6;
+    }
+    .info-card h3 {
+      margin: 0 0 16px 0;
+      font-size: 1.4rem;
+      color: #1d4ed8;
+    }
+    .info-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .info-card li {
+      position: relative;
+      padding-left: 32px;
+      margin-bottom: 12px;
+    }
+    .info-card li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+      font-weight: bold;
+    }
+    iframe {
+      width: 100%;
+      height: 92vh;
+      min-height: 800px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      background: white;
+    }
+    footer {
+      margin-top: 48px;
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.95rem;
+      padding: 20px 0;
+    }
+    @media (max-width: 1024px) {
+      .container { padding: 24px 16px; }
+      h1 { font-size: 2.3rem; }
+      iframe { height: 85vh; min-height: 600px; }
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .download-btn { font-size: 1.1rem; padding: 14px 28px; }
+      .info-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Picturebook Figurative Language Database</h1>
+      <div class="tagline">
+        A database of picturebook and fiction examples of figurative language (metaphors, similes, personification, and hyperbole) for teaching and curriculum — interactive web view (draft)
+      </div>
+    </header>
+    <div style="text-align: center;">
+      <a href="https://hkuhk-my.sharepoint.com/personal/cgreen_hku_hk/_layouts/15/Doc.aspx?sourcedoc={12055cf9-d59a-44c0-8c35-cfdf8891db6b}&action=embedview&download=1"
+         class="download-btn"
+         target="_blank">
+        <span>↓ Download Full Excel File</span>
+      </a>
+      <div style="margin-top: 8px; color: #6b7280; font-size: 0.95rem;">
+        Recommended for offline use, advanced filtering, or faster access
+      </div>
+    </div>
+    <div class="info-card">
+      <h3>How to use this interactive view</h3>
+      <ul>
+        <li><strong>Sort columns</strong> — click any column header (click again to reverse order)</li>
+        <li><strong>Filter / search</strong> — look for small search or filter icons in the header row (if visible)</li>
+        <li><strong>Scroll & navigate</strong> — use mouse wheel, trackpad, or touch gestures</li>
+        <li><strong>Zoom in/out</strong> — use browser zoom (Ctrl + / Ctrl –) if text is small</li>
+        <li><strong>Download full file</strong> — use the large blue button above or the download icon in the top-right corner of the table</li>
+      </ul>
+      <p style="margin-top: 16px; font-style: italic;">
+        Note: This is a web-based view hosted via Microsoft Excel Online.
+        For offline work, advanced editing, or better performance, download the full file.
+      </p>
+    </div>
+    <iframe
+      src="https://hkuhk-my.sharepoint.com/personal/cgreen_hku_hk/_layouts/15/Doc.aspx?sourcedoc={12055cf9-d59a-44c0-8c35-cfdf8891db6b}&action=embedview&AllowTyping=True&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True&edaebf=rslc0"
+      frameborder="0"
+      scrolling="yes"
+      allowfullscreen>
+    </iframe>
+    <footer>
+      <p>Hosted via Microsoft Excel Online • Maintained by Clarence Green, Ph.D.</p>
+    </footer>
+  </div>
+</body>
+</html>
