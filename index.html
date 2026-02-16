@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Interactive database of figurative language examples from picturebooks and fiction – metaphors, similes, personification, hyperbole for teaching. Download full Excel file.">
+  <meta name="keywords" content="figurative language, picturebooks, metaphors, similes, personification, hyperbole, education database">
   <title>Picturebook Figurative Language Database</title>
   <style>
     body {
@@ -56,6 +58,29 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(29, 78, 216, 0.35);
     }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .gallery-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-top: 8px;
+    }
     .info-card {
       background: white;
       border-radius: 12px;
@@ -88,6 +113,9 @@
       color: #3b82f6;
       font-weight: bold;
     }
+    .table-container {
+      margin: 20px 0;
+    }
     iframe {
       width: 100%;
       height: 92vh;
@@ -96,6 +124,46 @@
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.12);
       background: white;
+    }
+    .fallback-msg {
+      text-align: center;
+      color: #6b7280;
+      font-style: italic;
+      margin-top: 16px;
+    }
+    .jump-link {
+      text-align: center;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+    .jump-link a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+    .jump-link a:hover {
+      text-decoration: underline;
+    }
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #1d4ed8;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+    #back-to-top.visible {
+      opacity: 1;
     }
     footer {
       margin-top: 48px;
@@ -113,6 +181,8 @@
       h1 { font-size: 2rem; }
       .download-btn { font-size: 1.1rem; padding: 14px 28px; }
       .info-card { padding: 20px; }
+      .gallery { grid-template-columns: 1fr; }
+      iframe { height: 70vh; min-height: 500px; }
     }
   </style>
 </head>
@@ -132,9 +202,37 @@
         <span>↓ Download Full Excel File</span>
       </a>
       <div style="margin-top: 8px; color: #6b7280; font-size: 0.95rem;">
-        Direct download (saves as .xlsx) — no sign-in required if sharing is set to "Anyone with the link"
+        Direct download (saves as .xlsx)
       </div>
     </div>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+      <div>
+        <img src="https://freerangestock.com/sample/67731/stack-of-childrens-books-and-coffee-cup.jpg" alt="Stack of colorful children's picturebooks">
+        <div class="gallery-caption">Colorful stack of picturebooks — perfect for exploring figurative language!</div>
+      </div>
+      <div>
+        <img src="https://i.ytimg.com/vi/IXTL3eq0e80/maxresdefault.jpg" alt="Personification example: Smiling sun">
+        <div class="gallery-caption">The sun smiled at me — classic personification in children's illustrations</div>
+      </div>
+      <div>
+        <img src="https://image.slidesharecdn.com/elementsofpoetry-100426133835-phpapp02-51-240731053955-999c6a63/75/elementsofpoetry-100426133835-phpapp02-5-1-ppt-27-2048.jpg" alt="Metaphor example: Moon as ghostly galleon">
+        <div class="gallery-caption">"The moon was a ghostly galleon tossed upon cloudy seas" — vivid metaphor illustration</div>
+      </div>
+      <div>
+        <img src="https://makingenglishfun.com/wp-content/uploads/2024/01/Hyperbole-Examples-and-Worksheets-1024x576.jpg" alt="Hyperbole funny scene with giant burger horse">
+        <div class="gallery-caption">Hyperbole fun: Exaggerated scenes make language memorable!</div>
+      </div>
+      <div>
+        <img src="https://images.squarespace-cdn.com/content/v1/5ca76f7da37da50001b86fbd/5ac448ec-6244-4575-8903-945aaeb866d5/figurative+language+resources+graphic+%281%29.png" alt="Figurative language posters with examples">
+        <div class="gallery-caption">Visual aids for teaching similes, metaphors, personification & more</div>
+      </div>
+      <div>
+        <img src="https://rhubarbandwren.co.uk/wp-content/uploads/2019/09/diverse-picture-books-stack.jpg" alt="Diverse stack of children's picturebooks">
+        <div class="gallery-caption">Diverse picturebooks inspiring creativity and language play</div>
+      </div>
+    </section>
 
     <div class="info-card">
       <h3>How to use this interactive view</h3>
@@ -151,16 +249,41 @@
       </p>
     </div>
 
-    <iframe
-      src="https://hkuhk-my.sharepoint.com/:x:/g/personal/cgreen_hku_hk/IQD5XAUSmtXARIw1z9-IkdtrAceu0RPsol8s6BxgnDzTTOU?e=GvmPmQ&action=embedview&AllowTyping=True&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True"
-      frameborder="0"
-      scrolling="yes"
-      allowfullscreen>
-    </iframe>
+    <div class="jump-link">
+      <a href="#table">Jump to Interactive Table ↓</a>
+    </div>
+
+    <div class="table-container" id="table">
+      <iframe
+        title="Interactive Picturebook Figurative Language Database Table – sortable and filterable examples of metaphors, similes, personification, and hyperbole"
+        src="https://hkuhk-my.sharepoint.com/:x:/g/personal/cgreen_hku_hk/IQD5XAUSmtXARIw1z9-IkdtrAceu0RPsol8s6BxgnDzTTOU?e=GvmPmQ&action=embedview&AllowTyping=True&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True"
+        frameborder="0"
+        scrolling="yes"
+        allowfullscreen>
+      </iframe>
+      <p class="fallback-msg">
+        If the interactive table doesn't load (e.g., due to browser settings or access), download the full Excel file above or try refreshing the page.
+      </p>
+    </div>
 
     <footer>
       <p>Hosted via Microsoft Excel Online • Maintained by Clarence Green, Ph.D.</p>
     </footer>
   </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+
+  <script>
+    // Show/hide Back to Top button on scroll
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('back-to-top');
+      if (window.scrollY > 300) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    });
+  </script>
 </body>
 </html>
